@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import StyledHackerNews from "./styledComponents/StyledHackerNews";
 
 type hackerNews = {
   by: string;
@@ -29,7 +30,7 @@ function HackerNews({id}: {id: number}) {
 
   return (
     <div className="HackerNews">
-      {hackerNews.title} {hackerNews.by}
+      <StyledHackerNews title={hackerNews.title} author={hackerNews.by} link={hackerNews.link}></StyledHackerNews>
     </div>
   );
 }
