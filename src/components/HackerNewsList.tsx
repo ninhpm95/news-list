@@ -29,7 +29,6 @@ function HackerNewsList() {
 
   return (
     <div className="HackerNewsList">
-      
       {
         isAppReady ?
         hackerNewsList.slice(0, count).map((hackerNews: any) => <HackerNews key={hackerNews} id={hackerNews} />)

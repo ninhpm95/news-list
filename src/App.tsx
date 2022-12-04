@@ -4,6 +4,7 @@ import HackerNewsList from './components/HackerNewsList';
 function App() {
   return (
     <div className="App">
+      <div className='app-title'>HackerNews List</div>
       <HackerNewsList />
     </div>
   );
