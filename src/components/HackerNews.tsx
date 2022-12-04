@@ -12,10 +12,10 @@ type hackerNews = {
 
 const fetchHackerNews = async (id: number) => {
   let hackerNews: hackerNews = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
-    .then(response => response.json())
-    // .then(json => json);
-// console.log()hackerNews;
-return hackerNews;
+                                     .then(response => response.json())
+                                     // .then(json => json);
+  // console.log()hackerNews;
+  return hackerNews;
 }
 
 function HackerNews({id}: {id: number}) {
