@@ -4,7 +4,7 @@ import HackerNewsList from './components/HackerNewsList';
 function App() {
   return (
     <div className="App">
-      <h1 className='app-title'>HackerNews List</h1>
+      <h1 style={{textAlign: "center"}}>HackerNews List</h1>
       <HackerNewsList />
     </div>
   );
