@@ -1,10 +1,12 @@
 import styled, { keyframes } from 'styled-components';
 
+// spinning animation for loading
 const spin = keyframes`
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 `;
 
+// loading icon
 const Wrapper = styled.div`
   margin: auto;
   margin-top: 100px;

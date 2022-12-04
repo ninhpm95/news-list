@@ -11,6 +11,7 @@ type hackerNews = {
   type: string;
 }
 
+// fetch individual story
 const fetchHackerNews = async (id: number) => {
   let hackerNews: hackerNews = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
                                      .then(response => response.json());
@@ -18,8 +19,10 @@ const fetchHackerNews = async (id: number) => {
 }
 
 function HackerNews({id}: {id: number}) {
+  // news
   const [hackerNews, setHackerNews] = useState<any>({});
 
+  // fetch individual story when component is loaded
   useEffect(() => {
     fetchHackerNews(id).then((res) => {
       setHackerNews(res)

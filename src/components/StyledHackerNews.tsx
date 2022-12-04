@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// wrapper, used to wrap elements of the current news: title, author, link
 const Wrapper = styled.div`
   margin: 5px;
   padding: 10px;  
@@ -11,14 +12,17 @@ const Wrapper = styled.div`
   }
 `;
 
+// news title
 const Title = styled.h2`
   margin: 0;
 `;
 
+// news author
 const Author = styled.span`
 
 `;
 
+// news link
 const Link = styled.a`
   float: right;
   color: black;  
