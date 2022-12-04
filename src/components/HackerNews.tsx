@@ -15,7 +15,7 @@ const fetchHackerNews = async (id: number) => {
   let hackerNews: hackerNews = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
                                      .then(response => response.json())
                                      // .then(json => json);
-  // console.log()hackerNews;
+  console.log(hackerNews);
   return hackerNews;
 }
 
@@ -30,7 +30,7 @@ function HackerNews({id}: {id: number}) {
 
   return (
     <div className="HackerNews">
-      <StyledHackerNews title={hackerNews.title} author={hackerNews.by} link={hackerNews.link}></StyledHackerNews>
+      <StyledHackerNews title={hackerNews.title} author={hackerNews.by} url={hackerNews.url}></StyledHackerNews>
     </div>
   );
 }
