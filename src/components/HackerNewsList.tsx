@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import HackerNews from "./HackerNews";
 
 const fetchHackerNewsList = async () => {
-  let hackerNewsList: any[] = await fetch('https://jsonplaceholder.typicode.com/comments')
+  let hackerNewsList: any[] = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
     .then(response => response.json())
     // .then(json => json);
-    // console.log(hackerNewsList);
+    console.log(hackerNewsList);
     return hackerNewsList;
 }
 
@@ -18,7 +18,7 @@ function HackerNewsList() {
       setHackerNewsList(res);
     });
     window.addEventListener('scroll', () => {
-      if (window.innerHeight + window.pageYOffset + 25 >= document.body.offsetHeight) {
+      if (window.innerHeight + window.pageYOffset + 50 >= document.body.offsetHeight) {
         setCount(count => count + 10);
       }
     })
@@ -26,7 +26,7 @@ function HackerNewsList() {
 
   return (
     <div className="HackerNewsList">
-      {hackerNewsList.slice(0, count).map((hackerNews: any) => <HackerNews key={hackerNews.id} id={hackerNews.id} />)}
+      {hackerNewsList.slice(0, count).map((hackerNews: any) => <HackerNews key={hackerNews} id={hackerNews} />)}
     </div>
   );
 }

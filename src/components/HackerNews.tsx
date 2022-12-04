@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 
 type hackerNews = {
+  by: string;
   id: number;
-  name: string;
-  body: string;
-  postId: number;
-  email: string;
+  kids: number[];
+  parent: number;
+  text: string;
+  time: number;
+  type: string;
 }
 
 const fetchHackerNews = async (id: number) => {
-  let hackerNews: hackerNews = await fetch(`https://jsonplaceholder.typicode.com/comments/${id}`)
+  let hackerNews: hackerNews = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
     .then(response => response.json())
     // .then(json => json);
 // console.log()hackerNews;
@@ -27,7 +29,7 @@ function HackerNews({id}: {id: number}) {
 
   return (
     <div className="HackerNews">
-      {hackerNews.id} {hackerNews.name}
+      {hackerNews.title} {hackerNews.by}
     </div>
   );
 }
